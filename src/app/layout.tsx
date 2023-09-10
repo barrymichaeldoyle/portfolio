@@ -5,6 +5,8 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { ReactNode } from 'react';
 
+import { Navigation } from './layout/Navigation/Navigation';
+
 const inter = Inter({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
@@ -37,8 +39,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
               </h1>
             </Link>
             <div className="space-x-4 my-auto">
-              <HeaderLink href="/story">My Story</HeaderLink>
-              <HeaderLink href="/contact">Contact Me</HeaderLink>
+              <Navigation />
             </div>
           </div>
         </header>
@@ -47,16 +48,5 @@ export default function RootLayout({ children }: { children: ReactNode }) {
         </main>
       </body>
     </html>
-  );
-}
-
-function HeaderLink({ href, children }: { href: string; children: ReactNode }) {
-  return (
-    <Link
-      className="font-semibold px-4 py-2 rounded-full hover:bg-gray-600 transition duration-200"
-      href={href}
-    >
-      {children}
-    </Link>
   );
 }
