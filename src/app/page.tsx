@@ -5,7 +5,7 @@ import {
 } from '@/apis/stackoverflow/stackoverflow';
 import { PageSection } from '@/components/PageSection/PageSection';
 import { StackOverflowFlair } from '@/components/StackOverflowFlair/StackOverflowFlair';
-import { getYearsAndMonthsFromUnix } from '@/utils/getYearsAndMonthsSinceUnix/getYearsAndMonthsSinceUnix';
+import { getYearsAndMonthsSinceUnix } from '@/utils/getYearsAndMonthsSinceUnix/getYearsAndMonthsSinceUnix';
 import { Suspense } from 'react';
 
 export default async function Home() {
@@ -31,7 +31,7 @@ export default async function Home() {
               <p>
                 I&apos;ve been an active member of StackOverflow for{' '}
                 <strong>
-                  {getYearsAndMonthsFromUnix(account.creation_date)}
+                  {getYearsAndMonthsSinceUnix(account.creation_date)}
                 </strong>
               </p>
               <p>{account.reputation}</p>
