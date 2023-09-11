@@ -1,3 +1,4 @@
+// TODO: figure out how stackoverflow calculates it, because our function seems to round up
 export function getYearsAndMonthsSinceUnix(unixTime: number): string {
   const now = new Date();
   const past = new Date(unixTime * 1000); // Convert UNIX timestamp to JavaScript timestamp
